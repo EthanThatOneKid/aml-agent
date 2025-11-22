@@ -1,0 +1,23 @@
+{
+  "lock": false,
+  "imports": {
+    "#/": "./src/",
+    "@ai-sdk/google": "npm:@ai-sdk/google@^2.0.40",
+    "ai": "npm:ai@^5.0.98",
+    "zod": "npm:zod@^4.1.12"
+  },
+  "tasks": {
+    "start": "deno -A --env src/app.ts",
+    "fmt": "deno fmt",
+    "lint": "deno lint",
+    "check": "deno check",
+    "precommit": {
+      "description": "Run all pre-commit tasks",
+      "dependencies": [
+        "fmt",
+        "lint",
+        "check"
+      ]
+    }
+  }
+}
