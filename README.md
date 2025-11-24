@@ -18,6 +18,25 @@ Run the following command to run the opinionated pre-commit tasks:
 deno task precommit
 ```
 
+## AML API Integration
+
+This project includes integrated APIs for sanctions and PEP screening. See the
+[API Integration Guide](docs/API_INTEGRATION_GUIDE.md) for details.
+
+### Quick Start
+
+The system uses **Sanctions.network** (free) by default. No configuration
+needed!
+
+To use additional APIs (e.g., OFAC-API.com), set environment variables:
+
+```bash
+export OFAC_API_KEY="your-api-key-here"
+```
+
+See [AML API Recommendations](docs/AML_API_RECOMMENDATIONS.md) for a full list
+of available APIs and recommendations.
+
 Example output:
 
 ```
