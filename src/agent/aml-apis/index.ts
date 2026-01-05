@@ -5,7 +5,6 @@
  * It supports multiple providers and can fall back between them.
  */
 
-import { SanctionsNetworkAPI } from "./sanctions-network.ts";
 import { OFACAPI } from "./ofac-api.ts";
 import type {
   AdverseMediaMatch,
@@ -33,8 +32,9 @@ export class AMLAPIManager {
 
   private initializeAPIs() {
     // Initialize Sanctions.network (free, always available)
-    const sanctionsNetwork = new SanctionsNetworkAPI();
-    this.addAPI(sanctionsNetwork, { sanctions: 1, pep: 0, adverseMedia: 0 });
+    // Removed per user request (RPC API out of scope)
+    // const sanctionsNetwork = new SanctionsNetworkAPI();
+    // this.addAPI(sanctionsNetwork, { sanctions: 1, pep: 0, adverseMedia: 0 });
 
     // Initialize OFAC-API.com if API key is available
     const ofacAPI = new OFACAPI();
